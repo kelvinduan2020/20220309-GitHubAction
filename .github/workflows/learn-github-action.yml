@@ -13,7 +13,7 @@ jobs:
       - run: bats -v
 
       - shell: bash
-        run: ./.github/script/helloworld.sh
+        run: ./.github/script/hello.sh
         
       - run: echo ${user}        
         env:
