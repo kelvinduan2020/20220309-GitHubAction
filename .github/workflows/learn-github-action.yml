@@ -5,12 +5,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
       - run: npm install -g bats
       - run: bats -v
-      - run: ./script/hellworld.sh
-        shell: bash
-      - env:
+
+      - shell: bash
+        run: ./script/hellworld.sh        
+        env:
           user: kelvin.duan
