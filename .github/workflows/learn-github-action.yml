@@ -13,6 +13,6 @@ jobs:
       - run: bats -v
 
       - shell: bash
-        run: ./script/hellworld.sh        
+        run: ../script/hellworld.sh        
         env:
           user: kelvin.duan
