@@ -15,8 +15,6 @@ jobs:
       - shell: bash
         run: |
           chmod +x .github/script/hello.sh
-          ./.github/script/hello.sh
-        
-      - run: echo ${user}        
+          ./.github/script/hello.sh ${user}      
         env:
           user: kelvin.duan
