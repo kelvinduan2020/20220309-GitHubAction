@@ -4,15 +4,17 @@ jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: checkout
+        uses: actions/checkout@v2
 
-      - uses: actions/setup-node@v2
+      - name: install npm 
+        uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - run: npm install -g bats
-      - run: bats -v
+        run: npm version
 
-      - shell: bash
+      - name: run bash script with env
+        shell: bash
         run: |
           chmod +x .github/script/hello.sh
           ./.github/script/hello.sh ${user}      
